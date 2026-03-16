@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello from frontend</p>
+    <p>Current Date: <%= date %>  </p>
+    <p> </p>
+
+    <form>
+        <p><label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Enter your name"></p>
+        <p><label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Enter your password"></p>
+        <button type="submit" formaction="/submit" formmethod="post">Submit</button>
+        <button type="submit" formaction="/view" formmethod="get">View</button>
+        <button type="submit" formaction="/search" formmethod="post">Search</button>
+    </form>
+</body>
+</html>
