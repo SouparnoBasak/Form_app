@@ -1,0 +1,31 @@
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile-backend
+    hostname: backend
+    container_name: form-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - form-backend/.env
+    networks:
+      - form-network
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
+    hostname: frontend
+    container_name: form-frontend
+    env_file:
+      - form-frontend/.env
+    ports :
+      - "3000:3000"
+    networks:
+      - form-network
+    depends_on:
+      - backend
+  
+networks:
+  form-network: {}
